@@ -1,0 +1,499 @@
+openapi: 3.0.2
+info:
+  description: "# Overview\r\n\r\nEcoStruxure™ Energy and Sustainability Scoring API\
+    \ allows customers to configure buildings that needs benchmarking by calculating\
+    \ performance scores using the building energy and sustainability data.\r\n\r\n\
+    ## API overview and usage\r\n\r\nThis API enables the following operations:\r\n\
+    \r\n**Sites**\r\n* Retrieve all sites belonging to which the connected user has\
+    \ access, along site metadata needed for performance scores calculation (e.g.\
+    \ gross area, building occupants, operating hours, etc)\r\n\r\n**Performance Scores**\r\
+    \n* Allows the user to request site for performance score calculation \r\n* Read\
+    \ current and historical scores for a given site\r\n* Supported Types: Daily,\
+    \ Monthly, Average, LocalAverage\r\n* Supported Categories: Energy, Water, Waste,\
+    \ Transportation, Human Experience, Re-Entry\r\n\r\n\r\n## How it works\r\n\r\n\
+    This API works for any Schneider Electric customer who has an identity in Schneider\
+    \ Electric(SE) cIAM system.\r\n\r\n**Step 1:** In order to enquire the customer\
+    \ data, the user have to generate a Personal Access Token(PAT) from the Exchange\
+    \ Developer Portal on the product page after subscription.\r\n> Customer will\
+    \ have to provide their consent while generating PAT to share the building measurement\
+    \ data with scoring partner\r\n\r\n**Step 2:** Enquire all the sites which the\
+    \ customer is authorized to calculate the performance scores.\r\n\r\n**Step 3:**\
+    \ Send requests to calculate the performance score for a given site\r\n\r\n**Step\
+    \ 4:** Fetch all current and historical scores\r\n\r\n![High-level flow diagram](https://raw.githubusercontent.com/ecostruxure-openapi/public-images/main/energy-sustainability-scoring/user-edition.png\
+    \ \"High-level flow diagram\")\r\n\r\n# Documentation\r\n    \r\n## How to sign\
+    \ up\r\n    \r\n**Step 1:** [Register or login](https://exchange.se.com) with\
+    \ an Exchange account.\r\n\r\n**Step 2:** Subscribe to the [API product in our\
+    \ Shop](https://exchange.se.com).\r\n\r\n**Step 3:** After subscription, API credentials\
+    \ and usage details for the API are available in developer portal.\r\n\r\n## Code\
+    \ Samples\r\n\r\nYou can leverage the code samples provided to integrate faster\
+    \ in your application.\r\n\r\n  * ### [Postman collection](https://github.com/ecostruxure-openapi/energy-and-sustainability-scoring/tree/main/code_samples/postman_collection)\r\
+    \n\r\n  * ### [Java](https://github.com/ecostruxure-openapi/energy-and-sustainability-scoring/tree/main/code_samples/java)\r\
+    \n\r\n\r\n## Support\r\n\r\nContact the SE Exchange support team at exchange.support@se.com\
+    \ and include,\r\n\r\n    - Endpoint URL\r\n    - Request/Response of the URL\r\
+    \n    - Any additional information like Screenshots, Postman collections\r\n\r\
+    \n---"
+  title: EcoStruxure™ Energy & Sustainability Scoring API
+  version: User Edition 1.0.0
+servers:
+- url: https://se-exchange-uat-uat.apigee.net/ecostruxure/user/v1
+tags:
+- description: Everything about your sites where the compatible EcoStruxure offers
+    are deployed.
+  name: Site
+- description: Everything about your energy and sustainability scores.
+  name: Performance Score
+paths:
+  /sites:
+    get:
+      description: Retrieve all sites and related metadata
+      operationId: listSites
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Site'
+                type: array
+          description: Found Sites
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      security:
+      - PersonalAccessToken:
+        - read:site
+      summary: Fetch sites
+      tags:
+      - Site
+      x-accepts: application/json
+  /sites/{site-id}/performance-scores:
+    get:
+      description: Retrieve all performance scores for a given site
+      operationId: listPerformanceScores
+      parameters:
+      - explode: false
+        in: path
+        name: site-id
+        required: true
+        schema:
+          example: a483d4-e5be-4521-9f92-5400f5
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          items:
+            enum:
+            - daily
+            - monthly
+            - localAverage
+            - average
+            example: daily
+            type: string
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: category
+        required: false
+        schema:
+          items:
+            enum:
+            - energy
+            - water
+            - waste
+            - transportation
+            - humanExperience
+            - reEntry
+            example: energy
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PerformanceScore'
+                type: array
+          description: Found Scores
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Site Not found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      security:
+      - PersonalAccessToken:
+        - read:energy-score
+      summary: Get Performance Score
+      tags:
+      - Performance Score
+      x-accepts: application/json
+  /sites/{site-id}/scoring-requests:
+    get:
+      description: Allows end user to check the status of the site configured for
+        performance scoring.
+      operationId: getScoringRequestStatus
+      parameters:
+      - explode: false
+        in: path
+        name: site-id
+        required: true
+        schema:
+          example: a483d4-e5be-4521-9f92-5400f5
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: id
+        required: false
+        schema:
+          example: 12
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ScoringRequest'
+                type: array
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      security:
+      - PersonalAccessToken:
+        - write:scoring-request
+      summary: Scoring Request Status
+      tags:
+      - Performance Score
+      x-accepts: application/json
+    post:
+      description: User select a site for scoring and thus automatically share timeseries
+        related information to calculate scores
+      operationId: createScoringRequest
+      parameters:
+      - explode: false
+        in: path
+        name: site-id
+        required: true
+        schema:
+          example: a483d4-e5be-4521-9f92-5400f5
+          type: string
+        style: simple
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoringRequest'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      security:
+      - PersonalAccessToken:
+        - write:scoring-request
+      summary: Create Scoring Request
+      tags:
+      - Performance Score
+      x-accepts: application/json
+components:
+  schemas:
+    Address:
+      example:
+        zipCode: "3338"
+        address: 173 exford road
+        city: Melton South
+        countryIsoCode: AU
+        timezone: timezone
+        coordinates:
+          elevation: 1.4658129805029452
+          latitude: 0.8008281904610115
+          longitude: 6.027456183070403
+        stateProvince: AZ
+      properties:
+        address:
+          example: 173 exford road
+          type: string
+        city:
+          example: Melton South
+          type: string
+        countryIsoCode:
+          example: AU
+          type: string
+        zipCode:
+          example: "3338"
+          type: string
+        stateProvince:
+          example: AZ
+          type: string
+        timezone:
+          type: string
+          example: null
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+      title: Address
+      type: object
+    Site:
+      example:
+        metadata:
+          visitDuration: 0.0208
+          weeklyOperatingHours: 168
+          grossArea: 425
+          daysPerWeekWithVisitors: 7
+          buildingOccupants: 49
+          numberOfVisitorsPerDay: 548
+        postalAddress:
+          zipCode: "3338"
+          address: 173 exford road
+          city: Melton South
+          countryIsoCode: AU
+          timezone: timezone
+          coordinates:
+            elevation: 1.4658129805029452
+            latitude: 0.8008281904610115
+            longitude: 6.027456183070403
+          stateProvince: AZ
+        sourceSystemId: 241
+        name: Mcdonald's Melton South
+        id: fc64ac6a-abfd-4f5e-9d38-81101152c0ca
+        type: Retail
+      properties:
+        id:
+          example: fc64ac6a-abfd-4f5e-9d38-81101152c0ca
+          type: string
+        name:
+          example: Mcdonald's Melton South
+          type: string
+        type:
+          example: Retail
+          type: string
+        sourceSystemId:
+          example: 241
+          type: integer
+        metadata:
+          $ref: '#/components/schemas/Site_metadata'
+        postalAddress:
+          $ref: '#/components/schemas/Address'
+      title: Site
+      type: object
+    Error:
+      description: Error occurred while handling the request (based on rfc7807)
+      properties:
+        type:
+          description: "A URI reference [RFC3986] that identifies the problem type."
+          format: uri
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type."
+          type: string
+        status:
+          description: "The HTTP status code ([RFC7231], Section 6) generated by the\
+            \ origin server for this occurrence of the problem."
+          type: number
+        instance:
+          description: A URI reference that identifies the specific occurrence of
+            the problem.
+          type: string
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        debugging:
+          description: Debugging information for DEV and QA environments.
+          type: string
+        invalid-params:
+          description: An array of validation errors.
+          items:
+            $ref: '#/components/schemas/Error_invalid_params_inner'
+          type: array
+          uniqueItems: true
+      required:
+      - type
+      title: Error
+      type: object
+    PerformanceScore:
+      example:
+        date: 2000-01-23
+        score: 94.99
+        type: daily
+        category: energy
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        date:
+          format: date
+          type: string
+        score:
+          example: 94.99
+          type: number
+        type:
+          enum:
+          - daily
+          - monthly
+          - localAverage
+          - average
+          example: daily
+          type: string
+        category:
+          enum:
+          - energy
+          - water
+          - waste
+          - transportation
+          - humanExperience
+          - reEntry
+          example: energy
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      required:
+      - category
+      - date
+      - score
+      - type
+      title: Performance Score
+      type: object
+    ScoringRequest:
+      example:
+        createdAt: 17-12-2022T13:01:97Z
+        id: 12
+        detail: site is configured successfully
+        status: CONFIGURED
+      properties:
+        id:
+          example: 12
+          type: String
+        status:
+          enum:
+          - PENDING
+          - CONFIGURED
+          - REJECTED
+          example: CONFIGURED
+          type: string
+        detail:
+          example: site is configured successfully
+          type: string
+        createdAt:
+          example: 17-12-2022T13:01:97Z
+          format: datetime
+          type: string
+      title: Scoring Request
+      type: object
+    Coordinates:
+      example:
+        elevation: 1.4658129805029452
+        latitude: 0.8008281904610115
+        longitude: 6.027456183070403
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
+        elevation:
+          type: number
+      title: Coordinates
+      type: object
+    Site_metadata:
+      example:
+        visitDuration: 0.0208
+        weeklyOperatingHours: 168
+        grossArea: 425
+        daysPerWeekWithVisitors: 7
+        buildingOccupants: 49
+        numberOfVisitorsPerDay: 548
+      properties:
+        grossArea:
+          example: 425
+          type: integer
+        buildingOccupants:
+          example: 49
+          type: integer
+        daysPerWeekWithVisitors:
+          example: 7
+          type: integer
+        numberOfVisitorsPerDay:
+          example: 548
+          type: integer
+        visitDuration:
+          example: 0.0208
+          format: double
+          type: number
+        weeklyOperatingHours:
+          example: 168
+          type: integer
+      type: object
+    Error_invalid_params_inner:
+      additionalProperties: false
+      description: The validation error descriptor.
+      properties:
+        path:
+          type: string
+        name:
+          type: string
+        reason:
+          type: string
+      required:
+      - name
+      - path
+      - reason
+      type: object
+  securitySchemes:
+    PersonalAccessToken:
+      description: "Personal access token based authentication and authorization.\
+        \ You can generate personal access token for APIs through Schneider Electric\
+        \ Developer Portal, visit https://exchange.se.com/develop"
+      scheme: bearer
+      type: http
+x-tagGroups:
+- name: API specification
+  tags:
+  - Site
+  - Performance Score
+
