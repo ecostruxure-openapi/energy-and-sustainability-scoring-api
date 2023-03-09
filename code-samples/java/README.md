@@ -1,6 +1,6 @@
 # EcoStruxure™ Energy &amp; Sustainability Scoring API
 
-- API version: User Edition 1.0.0
+- API version: 1.0.0
 
 - Build date: 2023-02-08T13:21:09.999+05:30[Asia/Calcutta]
 
