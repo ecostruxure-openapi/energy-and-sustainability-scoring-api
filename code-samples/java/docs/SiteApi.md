@@ -1,6 +1,6 @@
 # SiteApi
 
-All URIs are relative to *https://se-exchange-uat-uat.apigee.net/ecostruxure/user/v1*
+All URIs are relative to *https://api.exchange.se.com/ecostruxure/user/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -30,7 +30,7 @@ import se.ecostruxure.sdk.client.SiteApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://se-exchange-uat-uat.apigee.net/ecostruxure/user/v1");
+        defaultClient.setBasePath("https://api.exchange.se.com/ecostruxure/user/v1");
         
         // Configure HTTP bearer authorization: PersonalAccessToken
         HttpBearerAuth PersonalAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("PersonalAccessToken");
