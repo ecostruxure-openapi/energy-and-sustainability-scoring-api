@@ -27,23 +27,23 @@ Edit the collection to configure the variables
 
 Configure the Personal Access Token created in Developer Portal after subscription
 
-<Configure Access Token image>
+![setToken](/code-samples/media/setToken.png)
 
 ## Execute
 
 ## Get Sites  
 List all the sites belongs to the user
-<image>
+![Get Sites](/code-samples/media/getSites.png)
 
 ## Performance-score
 List the performance of the site by daily and monthly 
-<image>
+![Get Sites](/code-samples/media/performanceScore.png)
 
 ## Create scoring-requests
 User Create scoring request for the site
-<images>
+![Get Sites](/code-samples/media/createRequest.png)
 
 ## Get scoring-requests
 User can get the Scoring request status
-<image>
+![Get Sites](/code-samples/media/getRequest.png)
 

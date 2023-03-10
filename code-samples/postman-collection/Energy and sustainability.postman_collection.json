@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "97587d73-c804-418b-a886-016af51d22ec",
+		"name": "Energy and sustainability",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "collection",
+			"item": [
+				{
+					"name": "GetSites",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites",
+							"protocol": "https",
+							"host": [
+								"se-exchange-uat-sandbox",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"ecostruxure",
+								"user",
+								"scoring",
+								"v1",
+								"sites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetSites-UserEdition-UserWithSites",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer BrfylMmH6uJ3jjejAHfm4f7d19GA",
+										"type": "default"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites",
+									"protocol": "https",
+									"host": [
+										"se-exchange-uat-sandbox",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"ecostruxure",
+										"user",
+										"scoring",
+										"v1",
+										"sites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Dec 2022 05:19:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b78cfbfe-29eb-4b5d-80eb-d5a1030ceede\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg 4C\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 842284,\n        \"metadata\": {\n            \"grossArea\": 53950,\n            \"buildingOccupants\": 444,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 32,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"zipCode\": \"560103\",\n            \"stateProvince\": \"IND\"\n        }\n    },\n    {\n        \"id\": \"c483fed4-e5be-4541-9f92-5400f7c0376b\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg B1\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 842285,\n        \"metadata\": {\n            \"grossArea\": 47551,\n            \"buildingOccupants\": 392,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 27,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"zipCode\": \"560103\",\n            \"stateProvince\": \"IND\"\n        }\n    },\n    {\n        \"id\": \"eb7a2757-d4d8-44e7-8d65-9b9ffc62bf35\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg 5AB\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 820508,\n        \"metadata\": {\n            \"grossArea\": 98418,\n            \"buildingOccupants\": 810,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 57,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"stateProvince\": \"IND\"\n        }\n    },\n    {\n        \"id\": \"aaa24aba-f05b-484d-b538-d488b0c0dd22\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg 4AB\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 842287,\n        \"metadata\": {\n            \"grossArea\": 83178,\n            \"buildingOccupants\": 684,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 48,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"zipCode\": \"560103\",\n            \"stateProvince\": \"IND\"\n        }\n    },\n    {\n        \"id\": \"7a507722-6328-445f-bb98-f9a7fd07b19f\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg 8AB\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 842286,\n        \"metadata\": {\n            \"grossArea\": 100472,\n            \"buildingOccupants\": 828,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 57,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"zipCode\": \"560103\",\n            \"stateProvince\": \"IND\"\n        }\n    },\n    {\n        \"id\": \"f6a98d9f-d462-4135-b720-a2f006a9ed48\",\n        \"name\": \"RMZ Ecoworld, Bangalore (REIPL) - Bldg 6 and 7\",\n        \"type\": \"Office: Administrative/Professional\",\n        \"sourceSystemId\": 842283,\n        \"metadata\": {\n            \"grossArea\": 93291,\n            \"buildingOccupants\": 1359,\n            \"daysPerWeekWithVisitors\": 5,\n            \"numberOfVisitorsPerDay\": 96,\n            \"visitDuration\": 0.159999,\n            \"weeklyOperatingHours\": 75\n        },\n        \"postalAddress\": {\n            \"address\": \"Doddakkanahalli,  Bhoganahalli, and Devarbeesanahalli, Varthur Hobli, Bangalore East Taluk\",\n            \"city\": \"Bengaluru\",\n            \"countryIsoCode\": \"India\",\n            \"zipCode\": \"560103\",\n            \"stateProvince\": \"IND\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Performance-score",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteId/performance-scores",
+							"protocol": "https",
+							"host": [
+								"se-exchange-uat-sandbox",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"ecostruxure",
+								"user",
+								"scoring",
+								"v1",
+								"sites",
+								":siteId",
+								"performance-scores"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "b78cfbfe-29eb-4b5d-80eb-d5a1030ceede"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetEnergyScoresForRequestedSites Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+										"type": "default"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteId/performance-scores",
+									"protocol": "https",
+									"host": [
+										"se-exchange-uat-sandbox",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"ecostruxure",
+										"user",
+										"scoring",
+										"v1",
+										"sites",
+										":siteId",
+										"performance-scores"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "siteId",
+											"value": "b78cfbfe-29eb-4b5d-80eb-d5a1030ceede"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 18:42:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"date\": \"2022-11-17\",\n        \"score\": 90,\n        \"type\": \"monthly\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2022-12-15T13:43:02Z\"\n    },\n    {\n        \"date\": \"2022-11-18\",\n        \"score\": 87,\n        \"type\": \"daily\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2022-12-15T13:43:02Z\"\n    },\n    {\n        \"date\": \"2022-08-08\",\n        \"score\": 60,\n        \"type\": \"monthly\",\n        \"category\": \"energy\",\n        \"updatedAt\": \"2023-03-07T12:30:07Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create scoring-requests",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteid/scoring-requests",
+							"protocol": "https",
+							"host": [
+								"se-exchange-uat-sandbox",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"ecostruxure",
+								"user",
+								"scoring",
+								"v1",
+								"sites",
+								":siteid",
+								"scoring-requests"
+							],
+							"variable": [
+								{
+									"key": "siteid",
+									"value": "7a507722-6328-445f-bb98-f9a7fd07b19f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateRequestCertification Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+										"type": "default"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteid/scoring-requests",
+									"protocol": "https",
+									"host": [
+										"se-exchange-uat-sandbox",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"ecostruxure",
+										"user",
+										"scoring",
+										"v1",
+										"sites",
+										":siteid",
+										"scoring-requests"
+									],
+									"variable": [
+										{
+											"key": "siteid",
+											"value": "aaa24aba-f05b-484d-b538-d488b0c0dd22"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 18:58:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"/ods-api/openesx/v1/sites/aaa24aba-f05b-484d-b538-d488b0c0dd22/scoring-requests\",\n    \"title\": \"Conflict\",\n    \"status\": 409,\n    \"detail\": \"Already site is being configured,Conflict occured cannot create a new request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get scoring-requests",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteId/scoring-requests",
+							"protocol": "https",
+							"host": [
+								"se-exchange-uat-sandbox",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"ecostruxure",
+								"user",
+								"scoring",
+								"v1",
+								"sites",
+								":siteId",
+								"scoring-requests"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "siteId",
+									"value": "9bbb2ed4-3e3a-4893-a702-43378acd6c55"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetRequestCertificationStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer BrfylMmH6uJ3jjejAHfm4f7d19GA",
+										"type": "default"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteId/certification-requests",
+									"protocol": "https",
+									"host": [
+										"se-exchange-uat-sandbox",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"ecostruxure",
+										"user",
+										"scoring",
+										"v1",
+										"sites",
+										":siteId",
+										"certification-requests"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "siteId",
+											"value": "b78cfbfe-29eb-4b5d-80eb-d5a1030ceede"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Dec 2022 05:19:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"9bbb2ed4-3e3a-4893-a702-43378acd6c55\",\n        \"status\": \"PENDING\",\n        \"detail\": \"Site is being configured\",\n        \"createdAt\": \"2022-12-15T13:42:33Z\"\n    }\n]"
+						},
+						{
+							"name": "GetRequestCertificationStatus Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer KeJbzWM5WIG71Tpeq5oARvS8vE9z",
+										"type": "default"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/user/scoring/v1/sites/:siteId/scoring-requests",
+									"protocol": "https",
+									"host": [
+										"se-exchange-uat-sandbox",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"ecostruxure",
+										"user",
+										"scoring",
+										"v1",
+										"sites",
+										":siteId",
+										"scoring-requests"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "siteId",
+											"value": "b78cfbfe-29eb-4b5d-80eb-d5a1030ceede"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 19:01:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src https: 'unsafe-inline' 'unsafe-eval' data: blob: mediastream:; font-src *;"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"/ods-api/openesx/v1/sites/b78cfbfe-29eb-4b5d-80eb-d5a1030ceede/scoring-requests\",\n    \"title\": \"Unauthorized\",\n    \"status\": 401,\n    \"detail\": \"Access is denied to recieve from the request made\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
